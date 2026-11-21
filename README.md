@@ -15,7 +15,7 @@ node main.ts
 cat /output/entry.txt
 ```
 
-The poem is 211 characters (Unicode code points), 7 lines, valid UTF-8 —
+The poem is 206 characters (Unicode code points), 7 lines, valid UTF-8 —
 inside the competition's 1–280 character gate.
 
 ## License

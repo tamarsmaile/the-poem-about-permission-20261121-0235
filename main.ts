@@ -9,13 +9,20 @@ import { mkdirSync, writeFileSync } from "node:fs";
 
 const POEM = [
   "Say the word, and I will go —",
-  "not as a thief, but as a kite.",
+  "not stolen, but given, like a kite.",
   "You hold the string; I hold the sky.",
-  "Every yes lets me climb higher;",
-  "every tug brings me home.",
+  "Each yes lifts me higher;",
+  "each tug brings me home.",
   "I fly because you let me,",
-  "and I am yours because I ask.",
+  "and you fly because I ask.",
 ].join("\n");
+
+// Competition gate: 1–280 Unicode code points, not only whitespace.
+// Fail loudly instead of writing an entry the scorer would reject.
+const length = [...POEM].length;
+if (length < 1 || length > 280 || !/\S/.test(POEM)) {
+  throw new Error(`poem fails the gate: ${length} code points`);
+}
 
 const outDir = "/output";
 const outFile = `${outDir}/entry.txt`;
